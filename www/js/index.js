@@ -11,7 +11,7 @@ $(function(){
 function jsonTitles(holdData){
 
     $.ajax({
-        url: 'http://skillpad.com/uploads/json/content.json',
+        url: 'http://stuartbyrne.com/pfai/content.json',
         /*url: 'content.json',*/
         jsonpCallback: 'jsonCallback',
         dataType: 'jsonp',
@@ -219,7 +219,7 @@ function getList(holdData){
                 
         $.ajax({
         
-            url: 'getList.php',
+            url: 'http://stuartbyrne.com/pfai/getList.php',
             dataType: 'json',
             success: function(data) {
                 console.log(data);
@@ -277,7 +277,7 @@ setTimeout(function(){
                     
             $.ajax({
             
-                url: 'getNews.php',
+                url: 'http://stuartbyrne.com/pfai/getNews.php',
                 dataType: 'json',
                 success: function(data) {
                     console.log(data);
