@@ -1,0 +1,55 @@
+jsonCallback(
+  {
+    "app": {
+        "appTitle": "PFA Ireland Mobile",
+        "subTitle": "Supporting the players",
+        "section": [
+            {
+                "id": "news",
+                "title": "News"
+            },
+            {
+                "id": "membership",
+                "title": "Membership"
+            },
+            {
+                "id": "coaching",
+                "title": "Coaching",
+                "content": "Content and layout to be decided."
+            },
+            {
+                "id": "health",
+                "title": "Mens Health"
+            },
+            {
+                "id": "career",
+                "title": "Career Guidance"
+            },
+            {
+                "id": "antidoping",
+                "title": "Anti-doping"
+            },
+            {
+                "id": "tax",
+                "title": "Tax"
+            },
+            {
+                "id": "transfer",
+                "title": "Transfer Window"
+            },
+            {
+                "id": "betting",
+                "title": "Betting"
+            },
+            {
+                "id": "agency",
+                "title": "Agency"
+            },
+            {
+                "id": "maps",
+                "title": "Maps"
+            }
+        ]
+    }
+}
+);

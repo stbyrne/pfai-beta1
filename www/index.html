@@ -1,0 +1,242 @@
+<!doctype HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
+	
+	<link rel="stylesheet" href="css/index.css"/>
+	<!--<link rel="stylesheet" href="js/jquery.mobile-1.4.0-beta.1.min.css" />-->
+	<!--<link rel="stylesheet" href="js/jquery.mobile.structure-1.4.0-beta.1.min.css" />-->
+    <link rel="stylesheet" href="js/custom/jquery.mobile.custom.theme.min.css" />
+    <link rel="stylesheet" href="js/custom/jquery.mobile.custom.structure.min.css" />
+	<!--<link rel="stylesheet" href="js/jquery.mobile.structure-1.3.2.min.css" />-->
+     
+	<script type="text/javascript" charset="utf-8" src="phonegap.js" ></script>
+    
+	<script src="js/jq.js"></script>
+    
+    
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    
+	<script>
+                
+		$(document).bind('mobileinit', function(){
+			$.mobile.defaultPageTransition="none";
+            $.mobile.defaultDialogTransition = 'none';
+            $.mobile.buttonMarkup.hoverDelay = 0;
+            /*$.mobile.allowCrossDomainPages = true;
+            $.support.cors = true;*/
+		});
+        
+         
+	</script>
+    
+	
+    <script type="text/javascript">
+    
+	
+	function onBodyLoad()
+	{
+        
+		document.addEventListener("deviceready", onDeviceReady, false);
+	}
+	
+	/* When this function is called, Cordova has been initialized and is ready to roll */
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	function onDeviceReady()
+	{
+    // Used by unit tests to tell when the page is loaded.
+    window.pageIsLoaded = true;
+    setTimeout(function(){
+        navigator.splashscreen.hide();
+    }, 5000);
+        
+		// do your thing!
+		// navigator.notification.alert("Cordova is working");     
+	}	
+	</script>
+	
+</head>
+    
+<body onload="onBodyLoad()">
+    
+<!--Home page-->
+    
+    <div id="home" data-role="page">
+        
+            <div data-role="header" data-position="fixed" data-theme="c">
+                <!--<a href="#left-panel" id="menuNav" class="ui-nodisc-icon" data-role="none"><img src="images/menu_g.png"/></a>-->
+                <a href="#left-panel" id="menuNav" class="ui-nodisc-icon" data-role="none"><img src="images/nav_g.png"/>Menu</a>
+                <h1 id="sectionTitle">PFAI</h1>
+                <h2 id="subTitle">Supporting the players</h2>
+                <a href="#help" id="helpNav" class="ui-nodisc-icon" data-role="none">Help</a>
+                
+            </div>
+            
+            <div data-role="content">
+                <div id="home-display">
+                    
+                <h3>Home Page</h3>
+                <p>Content and layout to be decided</p>
+                <img src="icon.png" class="home-image"/>
+                    
+                </div>
+                
+            </div>
+        
+            
+            <div id="com" data-role="footer">
+                
+                    <a href="#" id="call"><img src="images/call_g.png"/><span>call</span></a>
+                    <a href="#" id="mail"><img src="images/mail_g.png"/><span>mail</span></a>
+                    <a href="#" id="twitter"><img src="images/twit_g.png"/><span>twitter</span></a>
+                    <a href="#" id="face"><img src="images/face_g.png"/><span>facebook</span></a>
+            
+            </div>
+           
+            <!--Slide Content Left Panel-->
+            
+            <div data-role="panel" id="left-panel" data-theme="c" data-inset="true">
+                <div data-role="controlgroup">
+                    <p>Menu</p>
+                </div>
+                <div data-role="content">
+                    <ul id="homeList" data-role="listview" data-icon="false" class="ui-icon-nodisc ui-icon-alt">
+                        <li><a href="#transferlist"><span>Transfer List</span></a></li>
+                    
+                    </ul>
+                    
+                </div>
+                <!--<div data-role="footer">
+                    
+                
+                </div>-->
+
+            </div>
+    </div>
+        
+<!--End homepage-->
+    
+<!--Help Page-->
+    
+    <div id="help" data-role="page">
+        
+            <div data-role="header" data-position="fixed" data-theme="c">
+                <a href="#left-panel" id="menuNav" class="ui-nodisc-icon" data-role="none"><img src="images/nav_g.png"/>Menu</a>
+                <h1 id="sectionTitle">Need help</h1>
+                <h2 id="subTitle">Heres some tips!</h2>
+                <a href="#home" id="homeNav" class="ui-nodisc-icon ui-btn-right" data-role="none">Home</a>
+                
+            </div>
+            
+            <div data-role="content">
+                <h3>Help Page</h3>
+                
+            </div>
+        
+            <div id="com" data-role="footer">
+                
+                    <a href="#"><img src="images/call_g.png"/><span>call</span></a>
+                    <a href="#"><img src="images/mail_g.png"/><span>mail</span></a>
+                    <a href="#"><img src="images/twit_g.png"/><span>twitter</span></a>
+                    <a href="#"><img src="images/face_g.png"/><span>facebook</span></a>
+            
+            </div>
+        
+                       
+            <!--Slide Content Left Panel-->
+            
+            <div data-role="panel" id="left-panel" data-theme="c" data-inset="true">
+                <div data-role="controlgroup">
+                    <p>Tap the main page &rarr; <br>or wipe left to close.</p>
+                </div>
+                <div data-role="content">
+                    <img src="images/swipe.png" id="swipe"/>
+                    
+                </div>
+            </div>
+    </div>
+    
+<!--End Help Page-->
+    
+<!--Transfer List Page-->
+    
+    <div id="transferlist" data-role="page">
+        
+            <div data-role="header" data-position="fixed" data-theme="c">
+                
+                <a href="#left-panel" id="homeNav" class="ui-nodisc-icon" data-role="none"><img src="images/nav_g.png"/> Menu</a>
+                <h1 id="sectionTitle">Transfer List</h1>
+                <h2 id="subTitle">Currently available players</h2>
+                <a href="#home" id="homeNav" class="ui-nodisc-icon" data-role="none">Home</a>
+                
+            </div>
+            
+            <div data-role="content" id="transferlistContent">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Club</th>
+                            <th>Pos</th>
+                            <th>Age</th>
+                            <th>dob</th>
+                            <th>kg</th>
+                            <th>Exp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--<tr>
+                            <th>1</th>
+                            <td>Stuart Byrne</td>
+                            <td>Shelbourne</td>
+                            <td>Midfield</td>
+                            <td>36</td>
+                            <td>1976-11-04</td>
+                            <td>77</td>
+                            <td style="background-color: #ffc831"></td>
+                        </tr>-->
+      
+                    </tbody>
+                </table>
+                
+                
+            </div>
+        
+            
+            <div id="com" data-role="footer">
+                
+                    
+            
+            </div>
+           
+            <!--Slide Content Left Panel-->
+            
+            <div data-role="panel" id="left-panel" data-theme="c" data-inset="true">
+                <div data-role="controlgroup">
+                    <p>Menu</p>
+                </div>
+                <div data-role="content">
+                    <ul id="transList" data-role="listview" data-icon="false" class="ui-icon-nodisc ui-icon-alt">
+                        <!--<li><a href="#transferlist"><span>Transfer List</span></a></li>-->
+                    
+                    </ul>
+                    
+                </div>
+            </div>
+    </div>
+    
+<!--End Transfer List Page-->
+    
+    
+    <script src="js/custom/jquery.mobile.custom.min.js"></script>
+    <script src="js/fast.js"></script>
+    <script src="js/index.js"></script>
+    
+	
+</body>
+</html>
+

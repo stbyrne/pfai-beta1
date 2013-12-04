@@ -1,0 +1,57 @@
+#formWrap, #content{
+    padding: 20px 20px 40px;
+}
+#formHeader{
+    margin-bottom: 40px;   
+}
+
+#row-nav td{
+    width:100%;   
+}
+#news-articles{
+       
+}
+table h2{
+        font-size: 16px;   
+}
+th{
+    font-size: 14px;   
+}
+
+td{
+    font-size: 12px;
+    padding: 8px;
+}
+table img{
+    width: 50px;   
+}
+.btn-group{
+    padding-left: 10px;   
+}
+
+
+/*Break point for 640px in width*/
+@media ( max-width: 42em ) {
+    
+    table h2{
+        font-size: 16px;   
+    }
+    th{
+        
+        font-size: 10px;
+        font-weight: 400;
+    }
+    .table tr th, .table tr td{
+        padding: 2px!important;   
+    }
+    
+    td{
+        font-size: 10px;
+        
+        /*padding: 8px 2px!important;*/
+    }
+    table img{
+        width: 30px;   
+    }
+    
+}
