@@ -1,9 +1,12 @@
 var pagelist = [],
-    pageidlist = [];
+    pageidlist = [],
+    pagetextcontent = [],
+    staticlist = [];
             
 
 $(function(){
 
+    
    
 ///////////////////Ajax jsonp function to get data from json file////////////////
 		
@@ -11,7 +14,7 @@ $(function(){
 function jsonTitles(holdData){
 
     $.ajax({
-        url: 'http://stuartbyrne.com/pfai/content.json',
+        url: 'http://www.stuartbyrne.com/pfai/content.json',
         /*url: 'content.json',*/
         jsonpCallback: 'jsonCallback',
         dataType: 'jsonp',
@@ -49,7 +52,7 @@ function jsonTitles(holdData){
 
     
 jsonTitles(function(content){
-  
+    
         var	appTitle = $(content.app).attr('appTitle'),
             subTitle = $(content.app).attr('subTitle'),
             newsTitle = $('#newsTitle'),
@@ -61,8 +64,6 @@ jsonTitles(function(content){
             $body = $('body'),
             section = $(content.app.section);
     
-            console.log(appTitle);
-            console.log(subTitle);
     
     
 ///////////////////Assigning Titles from json array//////////////////////
@@ -82,12 +83,15 @@ jsonTitles(function(content){
             
                         pagelist.push(pagetitle);
                         pageidlist.push(pageid);
+                        pagetextcontent.push(pagecontent);
+                        staticlist.push(pageid);
+            
 ////////////////////Create List navigation in left panel on home page///////////////////////
             
-            homeList.append(
-                $('<li />', {
-                    'data-theme': 'c'
-                }).html('<a href="#' + pageid + '"><span>' + pagetitle + '</span></a>')).listview('refresh');
+        homeList.append(
+            $('<li />', {
+                'data-theme': 'c'
+            }).html('<a href="#' + pageid + '"><span>' + pagetitle + '</span></a>')).listview('refresh');
             
 ////////////////////Create List navigation in left panel on home page///////////////////////
             
@@ -113,7 +117,7 @@ jsonTitles(function(content){
                             $(this).append($('<div />', {
                                 'data-role': 'content',
                                 'id': pageid + 'Content'
-                            })/*.html('<p>' + pagecontent + '</p>')*/).append($('<div />', {
+                            })).append($('<div />', {
                                     'data-role': 'panel',
                                     'class': 'ui-icon-alt',
                                     id: 'left-panel'
@@ -132,25 +136,27 @@ jsonTitles(function(content){
                                             }))
                                         }));
             
-
-
         });//////End of Section Loop//////
     
     
-////////////////////Left Panel List of sections/////////////////////
+////////////////////Re-arranging the arrays for static text content i.e removing 'transfer list' and 'news' sections/////////////////////
     
-    pagelist.unshift('Transfer List'),
-    pageidlist.unshift('transferlist'),
+    staticlist.splice(0, 2);
+    staticlist.pop();
     
-    $(pagelist).each(function(i){
+    pagetextcontent.splice(0, 2);
+    pagetextcontent.pop();
+    
+////////////////////Add static text content to static pages/////////////////////
+    
+    $(staticlist).each(function(i){
+        var pagename = staticlist[i],
+            pagetext = pagetextcontent[i];
            
-            $('[data-role="panel"] ul:not(#homeList)').append(
-                        $('<li />', {
-                            'data-theme': 'c'
-                        }).html('<a href="#' + pageidlist[i] +'"><span>' + this + '</span></a>'));
+           $('#' + pagename + 'Content').html('<img class="static-image" src="images/content/' + pagename + '.png"/><p>' + pagetext + '</p>');
                
     });
-
+    
 ////////////////////Add loader to Maps page/////////////////////
     
     $('#mapsContent').append($('<div/>', {
@@ -206,20 +212,24 @@ $('#face').on('click', function(){
 window.open('https://www.facebook.com/pages/PFAIOfficial/137333183069003');
     });
 
+   
+
+////////////////////Delay for dynamic content//////////////////////////
+
+setTimeout(function(){
     
-////////////////////Fix page while scrolling left menu///////////////////////
-
-/*$('#menuNav').on('click', function(){
-    $('#home').attr('data-position', 'fixed');
-});*/
-
-////////////////////Get Current Transfer JSON array//////////////////////////
-
-function getList(holdData){
+////////////////////Create empty table for dynamic transfer listed player//////////////////////////
+    
+    $('#transferlistContent').html('<table><thead><tr><th>#</th><th>Name</th><th>Club</th><th>Pos</th><th>Age</th><th>dob</th><th>kg</th> <th>Exp</th> </tr></thead><tbody></tbody></table>');
+    
+////////////////////Get Current Transfer List from getList.php//////////////////////////
+    
+    function getList(holdData){
                 
         $.ajax({
         
-            url: 'http://stuartbyrne.com/pfai/getList.php',
+            /*url: 'getList.php',*/
+            url: 'http://www.stuartbyrne.com/pfai/getList.php',
             dataType: 'json',
             success: function(data) {
                 console.log(data);
@@ -259,25 +269,15 @@ function getList(holdData){
         });
         
     });
-
-////////////////////Build News section//////////////////////////
-
-
     
-
-////////////////////Add list of current articles to news page//////////////////    
-
 ////////////////////Get Current News from getNews.php//////////////////////////
-
-setTimeout(function(){
-    
-    console.log(pagelist);
     
     function getNews(holdNews){
                     
             $.ajax({
             
-                url: 'http://stuartbyrne.com/pfai/getNews.php',
+                /*url: 'getNews.php',*/
+                url: 'http://www.stuartbyrne.com/pfai/getNews.php',
                 dataType: 'json',
                 success: function(data) {
                     console.log(data);

@@ -78,7 +78,7 @@
     -o-box-pack: center;
     -ms-box-pack: center;
     /*border-right: 1px solid #bfbfbf*/;
-    margin-right: -1px;
+    /*margin-right: -1px;*/
     /*padding: 10px;*/
     height: 60px;
     bottom: 0;
@@ -102,7 +102,7 @@
 }
 #com a img{
     margin: 10px 20% 0;
-    max-width: 40%;
+    max-height: 40%;
 }
 
 /*Table for Transfer Listed Players*/
@@ -272,6 +272,10 @@ span .ui-icon .ui-icon-plus{
     border-radius: 5px;
     padding: .2em;
     
+}
+.static-image{
+    width: 200px;
+    margin: 0 auto;
 }
 
 #log * {
