@@ -28,6 +28,9 @@
     width: auto;
     height: 250px;
 }
+.ui-header{
+    height: 60px;   
+}
 /*Custom Buttons*/
 
 /*#menuNav, #homeNav{
