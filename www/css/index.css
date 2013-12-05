@@ -46,6 +46,10 @@
 #menuNav, #homeNav{
     padding: 2px 5px !important;
 }*/
+.ui-btn-active{
+    background: none!important;
+    border: none!important;
+}
 #menuNav, #homeNav, #helpNav{
     margin: .5em 0;
     text-decoration: none;
