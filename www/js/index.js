@@ -93,15 +93,6 @@ jsonTitles(function(content){
                 'data-theme': 'c'
             }).html('<a href="#' + pageid + '"><span>' + pagetitle + '</span></a>')).listview('refresh');
             
-////////////////////Create List navigation in left panel on home page///////////////////////
-            
-            /*transList.append(
-                $('<li />', {
-                    'data-theme': 'c'
-                }).html('<a href="#' + pageid + '"><span>' + pagetitle + '</span></a>')).listview('refresh');*/
-            
-
-                
             
 ///////////////////Creates the individual pages for each section////////////////
                         $body.append($('<div />', {
@@ -133,7 +124,7 @@ jsonTitles(function(content){
                                                                         'class': 'ui-nodisc-icon ui-alt-icon',
                                                                         'id': 'listLeft'
                                                                         })))
-                                            }))
+                                                    }))
                                         }));
             
         });//////End of Section Loop//////
@@ -234,6 +225,16 @@ setTimeout(function(){
             success: function(data) {
                 console.log(data);
                 holdData(data);
+            },
+            error: function(){
+                   $.ajax({
+        
+                    url: 'getList.json',
+                    dataType: 'json',
+                    success: function(data) {
+                        holdData(data);
+                    }
+                });
             }
         });
 }
