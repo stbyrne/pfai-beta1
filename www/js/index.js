@@ -18,7 +18,7 @@ function jsonTitles(holdData){
         /*url: 'content.json',*/
         jsonpCallback: 'jsonCallback',
         dataType: 'jsonp',
-        timeout: 5000,
+        timeout: 2000,
         success: function(data) {
             console.log(data);
             holdData(data);
@@ -283,7 +283,17 @@ setTimeout(function(){
                 success: function(data) {
                     console.log(data);
                     holdNews(data);
-                }
+                },
+                error: function(){
+                   $.ajax({
+        
+                    url: 'getNews.json',
+                    dataType: 'json',
+                    success: function(data) {
+                        holdNews(data);
+                    }
+                });
+            }
             });
     }
     
@@ -381,7 +391,7 @@ $(pagelist).each(function(i){
         
     });
 
-},2500);
+},4000);
 
 
 //////////////////////Initiate Maps///////////////////
