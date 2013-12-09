@@ -28,25 +28,24 @@
     width: auto;
     height: 250px;
 }
-/*Custom Buttons*/
-
-/*#menuNav, #homeNav{
-    background-image: linear-gradient( rgba(239, 239, 239, 0.6) , rgba(224, 224, 224, 0.6) );
-    border: 1px solid #ddd;
-    border-radius: 2px;
-    -webkit-box-shadow: 0 0 1px rgba(126, 126, 126, 0.75);
+.ui-header{
+    height: 60px;   
+}
+/*Icons for left list*/
+.t-icon {
+    margin-right: 5px;
+    /*height: 15px;*/
 }
 
-#menuNav img, #homeNav img{
-    width: 40px;
+#menuNav.ui-btn-active{
+    background: none!important;
+    border: none!important;
 }
-#menuNav, #homeNav{
-    padding: 2px 5px !important;
-}*/
+
 #menuNav, #homeNav, #helpNav{
-    margin: .5em 1px 0;
+    margin: .5em 0;
     text-decoration: none;
-    font: 1em Helvetica, Calibri, Arial, Verdana, sans-serif;
+    font: 1.2em Helvetica, Calibri, Arial, Verdana, sans-serif;
     font-weight: 300;
     text-shadow: none;
     color: #00b937;
@@ -57,6 +56,84 @@
     float: left;
     margin: -.2em 4px;
     /*position: relative;*/
+}
+/*Icons*/
+
+.icon-transferlist, .icon-news, .icon-membership, .icon-coaching, .icon-health, .icon-career, .icon-antidoping, .icon-tax, .icon-transfer, .icon-betting, .icon-agency, .icon-maps{
+    background-image: url('../images/list-icons/list-icons.png');
+    background-repeat: no-repeat;
+    background-size: 17px;
+    padding-left: 17px;
+    
+}
+.icon-transferlist{
+   background-position: 0 0;    
+}
+.icon-news{
+    background-position: 0 -17px;
+       
+}
+.icon-membership{
+    background-position: 0 -34px;
+  
+}
+.icon-coaching{
+    background-position: 0 -51px;
+}
+.icon-health{
+    background-position: 0 -68px;
+}
+.icon-career{
+    background-position: 0 -85px;
+}
+.icon-antidoping{
+    background-position: 0 -102px;
+}
+.icon-tax{
+    background-position: 0 -119px;
+}
+.icon-transfer{
+    background-position: 0 -136px;
+}
+.icon-betting{
+    background-position: 0 -153px;
+}
+.icon-agency{
+    background-position: 0 -170px;
+}
+.icon-maps{
+    background-position: 0 -187px;
+}
+
+/* Help Pages */
+#help .ui-content{
+    padding: 15px 0;   
+}
+
+.help-left{
+    float: left;
+    width: 40%;
+    padding-left: 10px;
+}
+
+.help-right{
+    float: right;
+    width: 40%;
+    text-align: right;
+    padding-right: 10px;
+}
+.help-bottom{
+    width: 100%;
+    bottom: 60px;
+    position: fixed;
+    text-align: center;
+}
+.help-bottom span{
+    margin: 5px auto;
+}
+.help-bottom div:nth-child(1n + 0){
+    float: left;
+    width: 25%;
 }
 
 /* Communications footer on homepage*/
@@ -78,7 +155,7 @@
     -o-box-pack: center;
     -ms-box-pack: center;
     /*border-right: 1px solid #bfbfbf*/;
-    margin-right: -1px;
+    /*margin-right: -1px;*/
     /*padding: 10px;*/
     height: 60px;
     bottom: 0;
@@ -102,7 +179,7 @@
 }
 #com a img{
     margin: 10px 20% 0;
-    max-width: 40%;
+    max-height: 40%;
 }
 
 /*Table for Transfer Listed Players*/
@@ -272,6 +349,10 @@ span .ui-icon .ui-icon-plus{
     border-radius: 5px;
     padding: .2em;
     
+}
+.static-image{
+    width: 200px;
+    margin: 0 auto;
 }
 
 #log * {
